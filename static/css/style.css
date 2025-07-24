@@ -1,0 +1,137 @@
+/* static/css/style.css */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.spectrum-image {
+    max-width: 100%;
+    max-height: 400px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.image-placeholder {
+    padding: 50px;
+    text-align: center;
+    border: 2px dashed #ccc;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.progress {
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+.btn-group {
+    margin-bottom: 10px;
+}
+
+.status-bar {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.badge {
+    font-size: 1em;
+    padding: 5px 10px;
+}
+
+/* 可选标签按钮样式 */
+.note-btn.active {
+    background-color: #0dcaf0;
+    color: white;
+}
+
+/* 标签按钮组间距 */
+.btn-group {
+    margin-bottom: 5px;
+}
+
+/* 标签按钮激活状态 */
+/* .label-btn.active {
+    box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.5);
+}  */
+
+/* 被选中的标签样式 */
+/* .current-label {
+    font-weight: bold;
+} */
+ 
+/* ===== 当前标签文字样式 ===== */
+.current-label {
+    font-weight: 800;
+    color: #080808; 
+    position: relative;
+    padding-left: 1.8rem;
+    text-decoration: underline;
+    text-decoration-color: #ffc107; /* 金色下划线 */
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+}
+
+/* 动态箭头图标 */
+.current-label::before {
+    content: "➤";
+    position: absolute;
+    left: 0;
+    animation: bounce 0.5s infinite alternate;
+    color: #dc3545; /* 红色箭头 */
+}
+
+/* ===== 标签按钮选中状态 ===== */
+.label-btn.active {
+    /* 基础样式 */
+    background-color: #f8f9fa !important; /* 浅灰背景 */
+    color: #0d6efd !important; /* 蓝色文字 */
+    border: 2px solid #0d6efd !important;
+    
+    /* 方案1的缩放效果 */
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+    
+    /* 方案2的角标标注 */
+    position: relative;
+    overflow: hidden;
+}
+
+/* 添加"SELECTED"角标 */
+.label-btn.active::after {
+    content: "SELECTED";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 0.6rem;
+    background: #0d6efd;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px 0 0 0;
+}
+
+/* 方案1的悬浮动画 */
+.label-btn.active:hover {
+    box-shadow: 0 0 15px rgba(13, 110, 253, 0.3);
+}
+
+/* ===== 动画定义 ===== */
+@keyframes bounce {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(5px); }
+}
+
+.halpha-stretch-image {
+    max-width: 100%;
+    max-height: 250px;
+    object-fit: contain;  /* 保留比例，不压缩 */
+}
+
+#time-spent.hidden {
+    opacity: 0.2;              /* 看起来像“关闭状态” */
+    pointer-events: auto;      /* 仍可点击！ */
+}
